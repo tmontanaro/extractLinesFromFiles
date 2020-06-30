@@ -19,28 +19,31 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    # Insert a line in a file
-    - name: Insert a line in a file
-      run: echo Line1 with WORD! >> input.txt
-    # Insert a line in a file
-    - name: Insert a line in a file
-      run: echo Line2 with WORD! >> input.txt
-    # Insert a line in a file
-    - name: Insert a line in a file
-      run: echo Line3 without! >> input.txt
-    # Insert a line in a file
-    - name: Insert a line in a file
-      run: echo Line4 with WORD! >> input.txt
-    # Insert a line in a file
-    - name: Insert a line in a file
-      run: echo Line5 without! >> input.txt
-
-    # Add execution permission to filterFile script
-    - name: Add execution permission to filterFile script
-      run: chmod +x filterFile.sh
-    # Run filterFile.sh
-    - name: Run the filterFile script
-      run: ./filterFile.sh -i input.txt -o output.txt -f "WORD"
+      # Insert a line in a file
+      - name: Insert a line in a file
+        run: echo Line1 with WORD! >> input.txt
+      # Insert a line in a file
+      - name: Insert a line in a file
+        run: echo Line2 with WORD! >> input.txt
+      # Insert a line in a file
+      - name: Insert a line in a file
+        run: echo Line3 without! >> input.txt
+      # Insert a line in a file
+      - name: Insert a line in a file
+        run: echo Line4 with WORD! >> input.txt
+      # Insert a line in a file
+      - name: Insert a line in a file
+        run: echo Line5 without! >> input.txt
+      # Add execution permission to filterFile script
+      - name: Add execution permission to filterFile script
+        run: chmod +x filterFile.sh
+      # Run filterFile.sh
+      - name: Run the filterFile script
+        run: ./filterFile.sh -i input.txt -o output.txt -f "WORD"
+      # Count number of lines
+      - name: Count number of lines
+        run: numLines=$(wc -l output.txt | awk '{print $1}')
+        
