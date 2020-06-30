@@ -46,4 +46,7 @@ jobs:
       # Count number of lines
       - name: Count number of lines
         run: numLines=$(wc -l output.txt | awk '{print $1}')
+      # Count number of lines
+      - name: Count number of lines
+        run: if [[ $numLines == 3 ]]; then echo 0; else echo 1; fi
         
