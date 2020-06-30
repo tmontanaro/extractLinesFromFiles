@@ -45,5 +45,5 @@ jobs:
         run: ./filterFile.sh -i input.txt -o output.txt -f "WORD"
       # Check number of lines
       - name: check number of lines
-        run: numLines=$(wc -l output.txt | awk '{print $1}'); if [[ $numLines == 3 ]]; then exit 0; else exit 1; fi
+        run: numLines=$(wc -l output.txt | awk '{print $1}'); if [[ $numLines == 43 ]]; then exit 0; else exit 1; fi
         
