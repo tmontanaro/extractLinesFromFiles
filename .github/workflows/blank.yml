@@ -38,6 +38,9 @@ jobs:
     - name: Insert a line in a file
       run: echo Line5 without! >> input.txt
 
+    # Add execution permission to filterFile script
+    - name: Add execution permission to filterFile script
+      run: chmod +x filterFile.sh
     # Run filterFile.sh
-    - name: Run a multi-line script
+    - name: Run the filterFile script
       run: ./filterFile.sh -i input.txt -o output.txt -f "WORD"
